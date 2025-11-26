@@ -147,7 +147,7 @@ spawn-at-startup "/usr/lib/xdg-desktop-portal &"
 spawn-at-startup "/usr/lib/xdg-desktop-portal-gtk &"
 spawn-at-startup "/usr/lib/xdg-desktop-portal-kde &"
 
-spawn-at-startup "/usr/lib/pam_kwallet_init &"
+//spawn-at-startup "/usr/lib/pam_kwallet_init &"
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &"
 
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
