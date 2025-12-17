@@ -1,8 +1,9 @@
 layout {
-    gaps 5
+    gaps 2
 
     border {
-        width 2
+        off
+        width 0
     }
 
     focus-ring {

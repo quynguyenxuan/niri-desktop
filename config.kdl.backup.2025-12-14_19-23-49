@@ -6,7 +6,7 @@ config-notification {
     disable-failed
 }
 // Outputs from existing configuration
-output "eDP-1" {
+/-output "eDP-1" {
     // Uncomment this line to disable this output.
     // off
 
@@ -16,14 +16,14 @@ output "eDP-1" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    // mode "1920x1080@120.030"
+    mode "1920x1080@120.030"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    // scale 1
+    scale 2
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
-    // transform "normal"
+    transform "normal"
 
     // Position of the output in the global coordinate space.
     // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
@@ -34,7 +34,7 @@ output "eDP-1" {
     // so to put another output directly adjacent to it on the right, set its x to 1920.
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
-    position x=0 y=0
+    position x=1280 y=0
 }
 
 
@@ -75,7 +75,6 @@ input {
 layout {
     // Set gaps around windows in logical pixels.
     background-color "transparent"
-    gaps 2
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
     //   or right edge of the screen.
@@ -110,26 +109,9 @@ layout {
     //
     // Alternatively, you can override it with a window rule called
     // `draw-border-with-background`.
-
-    // You can change how the focus ring looks.
-    focus-ring {
-        // Uncomment this line to disable the focus ring.
-        off
-
-        // How many logical pixels the ring extends out from the windows.
-        width 4
-
-        active-color "#7fc8ff"
-
-        inactive-color "#505050"
-
-    }
-
-    // You can also add a border. It's similar to the focus ring, but always visible.
-    
     border {
         off
-        width 0
+        width 4
         active-color   "#707070"      // Neutral gray
         inactive-color "#d0d0d0"      // Light gray
         urgent-color   "#cc4444"      // Softer red
@@ -158,30 +140,15 @@ overview {
 // See the binds section below for more spawn examples.
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
-spawn-at-startup "/usr/lib/xdg-desktop-portal &"
-spawn-at-startup "/usr/lib/xdg-desktop-portal-gtk &"
-spawn-at-startup "/usr/lib/xdg-desktop-portal-gnome &"
-
-// spawn-at-startup "/usr/lib/pam_kwallet_init &"
-spawn-at-startup "/usr/lib/polkit-gnome-authentication-agent-1 &"
-
 environment {
   XDG_CURRENT_DESKTOP "niri"
-//   GTK_USE_PORTAL "1"
-  QT_QPA_PLATFORM "wayland"
-  GTK_IM_MODULE "fcitx"
-  QT_IM_MODULE "fcitx"
-  ELECTRON_OZONE_PLATFORM_HINT "auto"
-  QT_QPA_PLATFORMTHEME "gtk3"
-  QT_QPA_PLATFORMTHEME_QT6 "gtk3"
 }
 hotkey-overlay {
     skip-at-startup
-}
+}                   
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
-    off
     workspace-switch {
         spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
     }
@@ -257,11 +224,7 @@ window-rule {
 }
 window-rule {
     match is-active=false
-    opacity 0.85
-}
-window-rule {
-    match is-active=true
-    opacity 0.92
+    opacity 0.9
 }
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
