@@ -36,9 +36,9 @@ output "eDP-1" {
     // automatically.
     position x=0 y=0
 }
-// output "DP-1" {
-//     position x=-1920 y=0
-// }
+output "DP-1" {
+    position x=-1920 y=0
+}
 
 
 gestures {
@@ -294,7 +294,3 @@ include "dms/binds.kdl"
 include "dms/override.kdl"
 
 
-
-include "dms/cursor.kdl"
-
-include "dms/outputs.kdl"

@@ -296,5 +296,3 @@ include "dms/override.kdl"
 
 
 include "dms/cursor.kdl"
-
-include "dms/outputs.kdl"
