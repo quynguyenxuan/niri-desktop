@@ -51,6 +51,7 @@ gestures {
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 input {
+    // focus-follows-mouse
     keyboard {
         xkb {
         }
@@ -148,7 +149,9 @@ spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 // spawn-at-startup "/usr/lib/xdg-desktop-portal-gnome &"
 
 // spawn-at-startup "/usr/lib/pam_kwallet_init &"
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "/usr/lib/soteria-polkit/soteria"
+// spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
+// spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 environment {
 //   GTK_THEME "WhiteSur-Dark"
